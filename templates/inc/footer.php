@@ -1,5 +1,5 @@
     <footer class="footer">
-        <p>&copy; 2022 <?php echo $appName; ?>, Inc.</p>
+        <p>&copy; 2022 <?php echo APP_TITLE; ?>, Inc.</p>
     </footer>
 
     </div>
