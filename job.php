@@ -12,7 +12,7 @@ if (isset($_POST['delete'])) {
     }
 }
 
-$template = new Template('templates/job-view.php');
+$template = new Template('templates/job/view.php');
 
 $job_id = isset($_GET['id']) ? $_GET['id'] : null;
 

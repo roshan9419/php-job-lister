@@ -23,7 +23,7 @@ if ($job_id && isset($_POST['submit'])) {
     }
 }
 
-$template = new Template('templates/job-edit.php');
+$template = new Template('templates/job/edit.php');
 
 $template->categories = $job->getCategories();
 $template->job = $job->getJob($job_id);

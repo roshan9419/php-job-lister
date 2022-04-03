@@ -1,4 +1,4 @@
-<?php include 'inc/header.php' ?>
+<?php include '../inc/header.php' ?>
 <div class="container">
 
     <h2 class="page-header"><?php echo $job->job_title; ?> (<?php echo $job->location; ?>)</h2>
@@ -32,4 +32,4 @@
     </div>
 
 </div>
-<?php include 'inc/footer.php' ?>
+<?php include '../inc/footer.php' ?>

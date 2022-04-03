@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-$template = new Template('templates/job-create.php');
+$template = new Template('templates/job/create.php');
 
 $template->categories = $job->getCategories();
 
