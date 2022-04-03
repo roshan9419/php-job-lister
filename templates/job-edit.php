@@ -1,4 +1,8 @@
 <?php include 'inc/header.php' ?>
+
+<div class="container">
+
+
     <h2 class="page-header">Edit Job Listing</h2>
     <hr>
 
@@ -10,12 +14,12 @@
         <div class="form-group">
             <label>Category</label>
             <select name="category_id" id="" class="form-control">
-            <option value="0">Choose Category</option>
-              <?php foreach($categories as $category):?>
-                <option value="<?php echo $category->id; ?>" <?php if ($job->category_id == $category->id) echo "selected"; ?>>
-                    <?php echo $category->name; ?>
-                </option>
-              <?php endforeach; ?>
+                <option value="0">Choose Category</option>
+                <?php foreach ($categories as $category) : ?>
+                    <option value="<?php echo $category->id; ?>" <?php if ($job->category_id == $category->id) echo "selected"; ?>>
+                        <?php echo $category->name; ?>
+                    </option>
+                <?php endforeach; ?>
             </select>
         </div>
         <div class="form-group">
@@ -44,4 +48,5 @@
         </div>
         <input type="submit" class="btn btn-primary" value="Update" name="submit">
     </form>
+</div>
 <?php include 'inc/footer.php' ?>

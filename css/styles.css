@@ -1,79 +1,109 @@
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  /* Everything but the jumbotron gets side spacing for mobile first views */
-  .header,
-  .marketing,
-  .footer {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  /* Custom page header */
-  .header {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e5e5e5;
-  }
-  /* Make the masthead heading the same height as the navigation */
-  .header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-  }
-  
-  /* Custom page footer */
-  .footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-  }
-  
-  /* Customize container */
-  @media (min-width: 768px) {
-    .container {
-      max-width: 730px;
-    }
-  }
-  .container-narrow > hr {
-    margin: 30px 0;
-  }
-  
-  /* Main marketing message and sign up button */
-  .jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-  }
-  .jumbotron .btn {
-    padding: 14px 24px;
-    font-size: 21px;
-  }
-  
-  /* Supporting marketing content */
-  .marketing {
-    margin: 40px 0;
-  }
-  .marketing p + h4 {
-    margin-top: 28px;
-  }
-  
-  /* Responsive: Portrait tablets and up */
-  @media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-      padding-right: 0;
-      padding-left: 0;
-    }
-    /* Space out the masthead */
-    .header {
-      margin-bottom: 30px;
-    }
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-      border-bottom: 0;
-    }
-  }
+#lead {
+  position: relative;
+  height: 92vh;
+  min-height: 500px;
+  max-height: 1080px;
+  background: url("./../assets/images/lead-bg.jpg");
+  background-size: cover;
+  padding: 15px;
+  background-attachment: fixed;
+}
+
+#lead-content {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#lead-content h2 {
+  color: #c6e2f5;
+  font-weight: 500;
+  font-size: 2.25em;
+  margin-bottom: 15px;
+}
+
+#lead-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(33, 125, 187, 0.8);
+  z-index: 1;
+}
+
+.btn-rounded {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 30px;
+  transition: 0.5s ease all;
+  text-decoration: none;
+}
+
+.btn-rounded-white {
+  color: #fff;
+  border: 3px solid #fff;
+  background: transparent;
+}
+
+.btn-rounded-white:hover {
+  color: #3498db;
+  background: #fff;
+}
+
+.btn-rounded-blue {
+  color: #3498db;
+  border: 3px solid #3498db;
+  background: transparent;
+  padding: 10px 25px;
+}
+
+.btn-rounded-blue:hover {
+  color: #fff;
+  background: #3498db;
+  text-decoration: none;
+}
+
+.search-container {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  outline: none;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background: white;
+}
+
+.search-box {
+  outline: none;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+
+.job-type {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #4e4e4e;
+  font-size: 16px;
+}
+
+.vertical-bar {
+  background-color: rgb(150, 150, 150);
+  margin-right: 10px;
+  padding: 0px;
+  width: 1px;
+  font-size: 0%;
+}
+
+.heading {
+  color: #374054;
+  text-align: center;
+}
