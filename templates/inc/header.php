@@ -13,7 +13,7 @@
 </head>
 
 <body style="background-color: #F9FAFC;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1000;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
                 <img src="assets/images/logo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -28,7 +28,7 @@
                     <a href="create.php" class="nav-item nav-link">Create Listing</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link">Login</a>
+                    <a href="login.php" class="nav-item nav-link">Login</a>
                 </div>
             </div>
         </div>
