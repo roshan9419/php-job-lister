@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/logo.svg">
     <title><?php echo APP_TITLE; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -13,6 +14,28 @@
 </head>
 
 <body style="background-color: #F9FAFC;">
+
+    <style>
+        .signin, .signup, .logout {
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 7px 10px 8px 10px;
+        }
+
+        .logout {
+            color: white;
+        }
+
+        .signin {
+            margin-right: 10px;
+        }
+
+        .signin, .signup {
+            background-color: royalblue;
+            color: white;
+        }
+    </style>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1000;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
@@ -25,17 +48,24 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-item nav-link active">Home</a>
-                    <a href="create.php" class="nav-item nav-link">Create Listing</a>
+
+                    <?php
+                    if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'ADMIN') {
+                        echo "<a href='create.php' class='nav-item nav-link'>Create Job Post</a>";
+                    }
+                    ?>
                 </div>
 
-                <?php
-                if (isset($_SESSION['user_name'])) {
-                    echo "Welcome, " . $_SESSION['user_name'] . "!";
-                }
-                ?>
-
                 <div class="navbar-nav ms-auto">
-                    <a href="login.php" class="nav-item nav-link">Login</a>
+                    <?php
+                    if (isset($_SESSION['user_name'])) {
+                        echo "<strong class='nav-item nav-link'>Hi, " . $_SESSION['user_name'] . "!</strong>";
+                        echo "<a href='logout.php' class='logout bg-danger'><i class='bi bi-box-arrow-left'></i> Logout</a>";
+                    } else {
+                        echo "<a href='login.php' class='signin'>Sign In</a>";
+                        echo "<a href='register.php' class='signup'>Sign Up</a>";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

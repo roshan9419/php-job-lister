@@ -2,6 +2,7 @@
 
 <?php
 $job = new Job;
+$auth = new Auth;
 
 if (isset($_POST['submit'])) {
     $data = array(
@@ -14,10 +15,15 @@ if (isset($_POST['submit'])) {
         'contact_user' => $_POST['contact_user'],
         'contact_email' => $_POST['contact_email'],
     );
+
+    if (!$auth->isAdmin()) {
+        redirect('create.php', "Unauthorized Access - You're not allowed to do this operation", 'fail');
+    }
+
     if ($job->create($data)) {
         redirect('index.php', 'Job has been listed successfully', 'success');
     } else {
-        redirect('index.php', 'Something went wrong', 'fail');
+        redirect('create.php', 'Something went wrong', 'fail');
     }
 }
 

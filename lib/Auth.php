@@ -46,4 +46,12 @@ class Auth
 
         return $this->user->create($name, $email, $password);
     }
+
+    public function isUserAuthenticated() {
+        return isset($_SESSION['user_id']);
+    }
+
+    public function isAdmin() {
+        return $this->isUserAuthenticated() && $_SESSION['user_role'] == 'ADMIN';
+    }
 }

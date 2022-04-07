@@ -18,6 +18,7 @@
         left: 50%;
         transform: translate(-50%, -40%);
         text-align: center;
+        width: 800px;
     }
 
     #lead-content h2 {
@@ -88,6 +89,24 @@
     .btn-rounded-white:hover {
         color: #3498db;
         background: #fff;
+    }
+
+    @media (max-width: 1000px) {
+        #lead-content {
+            width: 700px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        #lead-content {
+            width: 500px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        #lead-content {
+            width: 350px;
+        }
     }
 </style>
 
