@@ -36,9 +36,9 @@ function displayMessage()
             $message_type = $_SESSION['message_type'];
             // show alert output
             if ($message_type == 'fail') {
-                echo '<div class="alert alert-danger">' . $message . '</div>';
+                echo '<div class="alert alert-danger" style="z-index: 1000">' . $message . '</div>';
             } else {
-                echo '<div class="alert alert-success">' . $message . '</div>';
+                echo '<div class="alert alert-success" style="z-index: 1000">' . $message . '</div>';
             }
         }
 

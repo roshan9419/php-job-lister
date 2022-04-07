@@ -27,6 +27,13 @@
                     <a href="index.php" class="nav-item nav-link active">Home</a>
                     <a href="create.php" class="nav-item nav-link">Create Listing</a>
                 </div>
+
+                <?php
+                if (isset($_SESSION['user_name'])) {
+                    echo "Welcome, " . $_SESSION['user_name'] . "!";
+                }
+                ?>
+
                 <div class="navbar-nav ms-auto">
                     <a href="login.php" class="nav-item nav-link">Login</a>
                 </div>

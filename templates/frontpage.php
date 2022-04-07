@@ -53,7 +53,6 @@
         outline: none;
         border: none;
         width: 100%;
-        text-align: center;
     }
 
     .category-type {

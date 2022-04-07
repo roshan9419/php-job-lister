@@ -92,7 +92,7 @@
                             <i class="bi bi-eye-slash-fill"></i>
                         </span>
                     </div>
-                    <input type="password" class="form-control" name="create_password" placeholder="Create Password" required="required">
+                    <input type="password" class="form-control" name="password" placeholder="Create Password" required="required">
                 </div>
             </div>
             <div class="form-group mb-3">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary login-btn btn-block">Sign Up</button>
+                <button type="submit" name="register" class="btn btn-primary login-btn btn-block">Sign Up</button>
             </div>
             <p class="mt-3 text-center text-muted small">Already have an account? <a href="login.php" class="text-decoration-none">Sign In</a></p>
         </form>

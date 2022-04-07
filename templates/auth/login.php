@@ -86,7 +86,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary login-btn btn-block">Sign In</button>
+                <button type="submit" name="login" class="btn btn-primary login-btn btn-block">Sign In</button>
             </div>
             <p class="mt-3 text-center text-muted small">Don't have an account? <a href="register.php" class="text-decoration-none">Sign Up</a></p>
         </form>
