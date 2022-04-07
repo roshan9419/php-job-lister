@@ -23,13 +23,15 @@
     <a href="index.php">Go Back</a>
     <br><br>
 
-    <div class="well">
-        <a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-primary">Edit</a>
+    <?php if ($_SESSION['user_role'] == 'ADMIN') { ?>
+    <div>
+        <a href="edit.php?id=<?php echo $job->id; ?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Edit</a>
         <form style="display:inline" action="job.php" method="POST">
             <input type="hidden" name="del_id" value="<?php echo $job->id; ?>">
-            <input type="submit" class="btn btn-danger" value="Delete" name="delete">
+            <button type="submit" class="btn btn-danger" name="delete"> <i class="bi bi-trash"></i> Delete</button>
         </form>
     </div>
+    <?php } ?>
 
 </div>
 <?php include '../inc/footer.php' ?>
