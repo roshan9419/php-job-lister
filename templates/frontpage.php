@@ -210,7 +210,7 @@
                         <h4 class="job-title"><?php echo $job->job_title; ?></h4>
                         <div class="date-ago">
                             <i class="bi bi-clock"></i>
-                            <span>2 days ago</span>
+                            <span><?php echo $job->post_date; ?></span>
                         </div>
                     </div>
                     <div>
@@ -220,11 +220,11 @@
                     <div class="job-items-row">
                         <div class="job-item">
                             <i class="bi bi-briefcase"></i>
-                            <small class="text-muted">Internship</small>
+                            <small class="text-muted"><?php echo $job->job_type; ?></small>
                         </div>
                         <div class="job-item">
                             <i class="bi bi-bag"></i>
-                            <small class="text-muted">2 Yrs</small>
+                            <small class="text-muted"><?php echo $job->experience; ?> yrs</small>
                         </div>
                         <div class="job-item">
                             <i class="bi bi-people"></i>

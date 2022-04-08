@@ -3,6 +3,7 @@
 <?php
 $job = new Job;
 $auth = new Auth;
+$application = new Application;
 
 if (isset($_POST['delete'])) {
     $job_id = $_POST['del_id'];
@@ -23,5 +24,14 @@ $template = new Template('templates/job/view.php');
 $job_id = isset($_GET['id']) ? $_GET['id'] : null;
 
 $template->job = $job->getJob($job_id);
+
+$applied = false;
+if ($auth->isUserAuthenticated()) {
+    if ($application->getUserApplicationByJobId($_SESSION['user_id'], $job_id)) {
+        $applied = true;
+    }
+}
+
+$template->applied = $applied;
 
 echo $template;

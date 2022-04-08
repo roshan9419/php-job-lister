@@ -13,9 +13,13 @@ if ($job_id && isset($_POST['submit'])) {
         'category_id' => $_POST['category_id'],
         'description' => $_POST['description'],
         'location' => $_POST['location'],
+        'location_type' => $_POST['location_type'],
         'salary' => $_POST['salary'],
         'contact_user' => $_POST['contact_user'],
         'contact_email' => $_POST['contact_email'],
+        'job_type' => $_POST['job_type'],
+        'skills' => $_POST['skills'],
+        'experience' => (int)$_POST['experience']
     );
 
     if (!$auth->isAdmin()) {
@@ -32,6 +36,15 @@ if ($job_id && isset($_POST['submit'])) {
 $template = new Template('templates/job/edit.php');
 
 $template->categories = $job->getCategories();
+$template->job_types = [
+    'Internship',
+    'Full-time',
+    'Part-time',
+    'Contract',
+    'Temporary',
+    'Volunteer'
+];
+$template->location_types = ["Remote", "On-site", "Hybrid"];
 $template->job = $job->getJob($job_id);
 
 echo $template;

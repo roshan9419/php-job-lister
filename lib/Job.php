@@ -52,8 +52,8 @@ class Job
     public function create($data)
     {
         // insert query
-        $this->db->query("INSERT INTO jobs (category_id, job_title, company, description, location, salary, contact_user, contact_email) 
-            VALUES (:category_id, :job_title, :company, :description, :location, :salary, :contact_user, :contact_email)");
+        $this->db->query("INSERT INTO jobs (category_id, job_title, company, description, location, salary, contact_user, contact_email, location_type, applicants, experience, skills, job_type) 
+            VALUES (:category_id, :job_title, :company, :description, :location, :salary, :contact_user, :contact_email, :location_type, :applicants, :experience, :skills, :job_type)");
 
         // bind data
         $this->db->bind(':category_id', $data['category_id']);
@@ -64,6 +64,11 @@ class Job
         $this->db->bind(':salary', $data['salary']);
         $this->db->bind(':contact_user', $data['contact_user']);
         $this->db->bind(':contact_email', $data['contact_email']);
+        $this->db->bind(':location_type', $data['location_type']);
+        $this->db->bind(':applicants', '');
+        $this->db->bind(':experience', $data['experience']);
+        $this->db->bind(':skills', $data['skills']);
+        $this->db->bind(':job_type', $data['job_type']);
 
         // execute
         if ($this->db->execute()) {
@@ -98,7 +103,11 @@ class Job
                 location = :location,
                 salary = :salary,
                 contact_user = :contact_user,
-                contact_email = :contact_email
+                contact_email = :contact_email,
+                location_type = :location_type,
+                experience = :experience,
+                skills = :skills,
+                job_type = :job_type
                 WHERE id = $job_id");
 
         // bind data
@@ -110,6 +119,10 @@ class Job
         $this->db->bind(':salary', $data['salary']);
         $this->db->bind(':contact_user', $data['contact_user']);
         $this->db->bind(':contact_email', $data['contact_email']);
+        $this->db->bind(':location_type', $data['location_type']);
+        $this->db->bind(':experience', $data['experience']);
+        $this->db->bind(':skills', $data['skills']);
+        $this->db->bind(':job_type', $data['job_type']);
 
         // execute
         if ($this->db->execute()) {

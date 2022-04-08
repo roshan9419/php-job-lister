@@ -27,9 +27,10 @@ class User
     public function create($name, $email, $password)
     {
         // insert query
-        $this->db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :pass)");
+        $this->db->query("INSERT INTO users (name, email, password, role) VALUES (:name, :email, :pass, :role)");
 
         // bind data
+        $this->db->bind(':role', 'CANDIDATE');
         $this->db->bind(':name', $name);
         $this->db->bind(':email', $email);
         $this->db->bind(':pass', password_hash($password, PASSWORD_DEFAULT));
