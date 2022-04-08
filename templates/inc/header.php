@@ -16,7 +16,9 @@
 <body style="background-color: #F9FAFC;">
 
     <style>
-        .signin, .signup, .logout {
+        .signin,
+        .signup,
+        .logout {
             border-radius: 5px;
             text-decoration: none;
             padding: 7px 10px 8px 10px;
@@ -30,7 +32,8 @@
             margin-right: 10px;
         }
 
-        .signin, .signup {
+        .signin,
+        .signup {
             background-color: royalblue;
             color: white;
         }
@@ -52,6 +55,12 @@
                     <?php
                     if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'ADMIN') {
                         echo "<a href='create.php' class='nav-item nav-link'>Create Job Post</a>";
+                    }
+                    ?>
+
+                    <?php
+                    if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] != 'ADMIN') {
+                        echo "<a href='applications.php' class='nav-item nav-link'>My Applications</a>";
                     }
                     ?>
                 </div>

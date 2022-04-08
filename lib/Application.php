@@ -19,7 +19,7 @@ class Application
     public function getUserApplications($user_id) {
         $this->db->query("SELECT * FROM applications WHERE user_id = :user_id");
         $this->db->bind(":user_id", $user_id);
-        return $this->db->single();
+        return $this->db->resultSet();
     }
 
     public function create($user_id, $job_id)
